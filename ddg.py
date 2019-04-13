@@ -19,6 +19,18 @@ class DuckDuckGo(commands.BaseCommand):
 		self.inter = True
 	
 	def doSearch(self, value):
+		if value.endswith("--"):
+			data = self.client.search(value[:-2])
+			s = ""
+			for i in range(0, 10):
+				f = True
+				s += f"{data['snippets'][i]}\nhttp://{data['urls'][i]}\n\n"
+			
+			if s != "":
+				return s
+			else:
+				return "No results found."
+				
 			num = -1
 			for i in range(0, 10):
 				if f'/{i}' in value:
