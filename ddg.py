@@ -2,6 +2,16 @@ from . import commands
 import random
 
 class DuckDuckGo(commands.BaseCommand):
+	"""
+	Searches DuckDuckGo and prints the results.
+	
+	format:
+		search for <anything>
+		
+		If needed, adding /number to the query shows only the one result, for example
+		search for python3 /5
+		shows the 5th result, otherwise top 10 results will be shown.
+	"""
 	def __init__(self, host):
 		super().__init__(host)
 		
@@ -19,33 +29,34 @@ class DuckDuckGo(commands.BaseCommand):
 		self.inter = True
 	
 	def doSearch(self, value):
-		if value.endswith("--"):
-			data = self.client.search(value[:-2])
+		num = -1
+		for i in range(0, 10):
+			if f'/{i}' in value:
+				value = value.replace(f'/{i}', '')
+				num = i
+		
+		if num == -1:
+			data = self.client.search(value)
 			s = ""
 			for i in range(0, 10):
-				f = True
-				s += f"{data['snippets'][i]}\nhttp://{data['urls'][i]}\n\n"
-			
+				try:
+					s += f"{data['snippets'][i]}\nhttp://{data['urls'][i]}\n\n"
+					f = True
+				except IndexError:
+					pass
+				
 			if s != "":
-				return s
+				return s[:-2]
 			else:
 				return "No results found."
-				
-			num = -1
-			for i in range(0, 10):
-				if f'/{i}' in value:
-					value = value.replace(f'/{i}', '')
-					num = i
-			
-			if num == -1:
-				num = random.randint(0, 10)
 
-			data = self.client.search(value)
-			
-			#print(data['snippets'][num])
-			#print(data['urls'][num])
+		data = self.client.search(value)
+		
+		try:
 			return f"{self.host.formatting.Bold}[Search for {value} (RESULT: {num})]{self.host.reset_f}\n{data['snippets'][num]}\nhttp://{data['urls'][num]}"
-	
+		except IndexError:
+			return "No result on that index."
+			
 	def onHeld(self, value):
 		return self.output(self.doSearch(value))
 	
