@@ -15,6 +15,29 @@ Requirements: Linux OS
 Pokedex searcher, shows basic pokemon information<br>
 Requirements: tkinter, pokedex (http://github.com/codedthoughts/pokedex/)
 
-## DuckDuckGo
+## ddg
 Searches duckduckgo for results.<br>
 Requirements: BeautifulSoup, duckduckgo (http://github.com/codedthoughts/duckduckgo/)
+
+## weather
+Methods for showing weather reports.<br>
+Sourced from Darksky, uses komoot for geolocation.
+Requirements: darkskylib, requests, pytz, unit_parser
+
+## wikipedia
+Not yet ready.
+
+## trello
+Not yet ready.
+
+## reddit
+Not yet ready.
+
+## taskw
+Not yet ready.
+
+## journal
+Not yet ready.
+
+## directory
+Not yet ready.
