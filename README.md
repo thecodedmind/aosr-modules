@@ -37,7 +37,13 @@ Not yet ready.
 Not yet ready.
 
 ## journal
-Not yet ready.
+Simple CLI journalling system. Supports adding and removing journal entries.
+Soon to support annotations and edit histories, plus more.
+
+## audio
+Audio manager systems.
+Supports playing local AND remote audio through simple command interface.
+Requirements: ffmpeg with ffmplay
 
 ## directory
 Not yet ready.
