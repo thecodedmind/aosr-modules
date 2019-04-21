@@ -3,6 +3,10 @@ Modules for http://github.com/codedthoughts/AthenaOS/
 
 All modules are currently work-in-progress and will change as time goes on.
 
+## wolfram
+Sends a query off to the Wolfram|Alpha API and cleanly reports the result.<br>
+Requirements: Requests, and your own Wolfram|Alpha AppId (its free, dont worry)
+
 ## bin_launcher
 A simple way to manage and search your path binaries.<br>
 Requirements: Linux OS
@@ -37,12 +41,12 @@ Not yet ready.
 Not yet ready.
 
 ## journal
-Simple CLI journalling system. Supports adding and removing journal entries.
+Simple CLI journalling system. Supports adding and removing journal entries.<br>
 Soon to support annotations and edit histories, plus more.
 
 ## audio
-Audio manager systems.
-Supports playing local AND remote audio through simple command interface.
+Audio manager systems. <br>
+Supports playing local AND remote audio through simple command interface.<br>
 Requirements: ffmpeg with ffmplay
 
 ## directory
