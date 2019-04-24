@@ -38,7 +38,8 @@ Not yet ready.
 Not yet ready.
 
 ## taskw
-Not yet ready.
+Simple taskwarrior wrapper.<br>
+Requirements: Taskathon (https://github.com/codedthoughts/taskathon/)
 
 ## journal
 Simple CLI journalling system. Supports adding and removing journal entries.<br>
