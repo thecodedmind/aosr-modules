@@ -39,7 +39,7 @@ Not yet ready.
 
 ## taskw
 Simple taskwarrior wrapper.<br>
-Requirements: Taskathon (https://github.com/codedthoughts/taskathon/)
+Requirements: Taskwarrior
 
 ## journal
 Simple CLI journalling system. Supports adding and removing journal entries.<br>
